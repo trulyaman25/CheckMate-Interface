@@ -7,7 +7,7 @@ import facebookIcon from '../../../assets/icons/facebookLogoSVG.svg';
 
 const Footer = () => {
     return (
-        <footer className="bg-[#200435] text-white py-10 px-72 h-[400px] flex flex-col justify-center items-center">
+        <footer className="bg-[#11051b] text-white py-10 px-72 h-[400px] flex flex-col justify-center items-center">
             <div className="cursor-pointer text-white w-full flex flex-row justify-start">
                 <span className="font-noirProBold text-4xl">CHECK</span>
                 <span className="font-noirProRegular text-4xl text-[#6536ff] tracking-widest ml-2 mb-1">MATE</span>
