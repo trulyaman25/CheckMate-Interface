@@ -44,7 +44,7 @@ function Analysis() {
                         </p>
 
                         {loading ? (
-                            <p>Loading documents...</p>
+                            <p className='mt-10'>Loading documents...</p>
                         ) : error ? (
                             <p className="text-red-500">{error}</p>
                         ) : (
