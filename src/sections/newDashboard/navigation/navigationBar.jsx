@@ -36,7 +36,7 @@ function DashboardNavbar() {
                         </li>
 
                         <li className="w-full">
-                            <NavLink className="flex items-center space-x-4 w-full text-orange-400 hover:text-orange-600 transition ease-in-out duration-200t" onClick={() => logout({ returnTo: window.location.origin })}>
+                            <NavLink className="flex items-center space-x-4 w-full text-orange-400 hover:text-orange-600 transition ease-in-out duration-200t" onClick={() => logout({ returnTo: 'https://check-mate-interface.vercel.app/' })}>
                                 <span className="font-albulaHeavy px-12 text-2xl">Log Out</span>
                             </NavLink>
                         </li>
