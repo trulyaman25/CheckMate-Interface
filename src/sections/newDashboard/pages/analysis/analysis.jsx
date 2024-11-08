@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import VerifiedDocumentIcon from '../../../../assets/icons/VerifiedDocument.png';
 
 
 function Analysis() {
@@ -54,11 +53,6 @@ function Analysis() {
                                         {documents.map((document, index) => (
                                             <li key={index} className="grid grid-cols-4 items-center p-6 pr-10 border-b-2 hover:border-1 hover:border-indigo-200 hover:bg-indigo-50 transition-all duration-200 gap-4 hover:cursor-pointer">
                                                 <div className="flex items-center justify-start">
-                                                    <span className="text-3xl mr-2">
-                                                        {document.verify_flag ? 
-                                                            <img src={VerifiedDocumentIcon} className="w-[40px] h-[40px]" alt="Verified Icon" /> : null
-                                                        }
-                                                    </span>
                                                     <p className="font-semibold text-slate-800 ml-3">{document.doctype || 'Unknown Document Type'}</p>
                                                 </div>
 
