@@ -6,7 +6,6 @@ import axios from 'axios';
 import WarningIcon from '../../../../assets/icons/warningIcon.png';
 import VerifiedDocumentIcon from '../../../../assets/icons/verifiedDocument.png';
 
-
 function Analysis() {
     const { user } = useAuth0();
     const [showActions, setShowActions] = useState(Array(4).fill(false));

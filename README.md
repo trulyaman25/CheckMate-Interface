@@ -1,6 +1,6 @@
 
 # Check Mate
-Deployed link ---> https://check-mate-interface.vercel.app/
+Deployed link ---> https://checkstudio.vercel.app/
 
 ## Table of Contents
 - [Project Overview](#project-overview)
