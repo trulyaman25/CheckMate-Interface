@@ -57,8 +57,8 @@ function Analysis() {
                                                 <div className="flex items-center justify-start">
                                                     <span className="text-3xl mr-2">
                                                         {document.verify_flag ? 
-                                                            <img src={VerifiedDocumentIcon} className="w-[40px] h-[40px]" alt="Verified Icon" /> : 
-                                                            <img src={WarningIcon} className="w-[35px] h-[35px]" alt="Warning Icon" />}
+                                                            <img src={VerifiedDocumentIcon} className="w-[40px] h-[40px]" alt="Verified Icon" /> : null
+                                                        }
                                                     </span>
                                                     <p className="font-semibold text-slate-800 ml-3">{document.doctype || 'Unknown Document Type'}</p>
                                                 </div>
