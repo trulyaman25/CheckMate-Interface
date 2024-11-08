@@ -29,30 +29,6 @@ function Analysis() {
         day: 'numeric',
     });
 
-    useEffect(() => {
-        const fetchDocuments = async () => {
-            if (!user?.sub) {
-                setError('User ID is not available.');
-                setLoading(false);
-                return;
-            }
-
-            try {
-                const response = await axios.get(`http://127.0.0.1:5000/c/${user.sub}`);
-                console.log("Response Data:", response.data);
-                setDocuments(response.data);
-            } catch (err) {
-                console.error("Error fetching documents:", err);
-                setError('Failed to fetch documents: ' + err.message);
-            } finally {
-                setLoading(false);
-            }
-        };
-
-        fetchDocuments();
-    }, [user.sub]);
-    
-
     return (
         <>
             <main className="fixed w-[calc(100vw-450px)] h-screen pt-7 pb-7 pr-7 font-albulaRegular">   
