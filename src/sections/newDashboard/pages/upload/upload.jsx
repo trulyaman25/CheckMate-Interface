@@ -11,7 +11,7 @@ import animationData from '../../../../assets/animations/enlargingCircle_Loader.
 import tickAnimation from '../../../../assets/animations/tickAnimation.json';
 import errorAnimation from '../../../../assets/animations/Error_Animation.json';
 
-function Profile() {
+function Upload() {
     const { user, isAuthenticated } = useAuth0();
     const [file, setFile] = useState(null);
     const [docType, setDocType] = useState('');
@@ -367,4 +367,4 @@ function Profile() {
     );
 }
 
-export default Profile;
+export default Upload;
