@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import { useAuth0 } from "@auth0/auth0-react";
 
 import Home from './sections/home/home';
 import DashboardLayout from './sections/newDashboard/dashboardLayout';
@@ -34,6 +35,7 @@ function WebRoutes() {
             <ConditionalHeader />
             <Routes>
                 <Route path="/" element={<Home />} />
+                {isAuthenticated ? (
                     <Route path="/dashboard" element={<DashboardLayout />}>
                         <Route path="wallet" element={<Wallet />} />
                         <Route path="profile" element={<Profile />} />
@@ -41,6 +43,7 @@ function WebRoutes() {
                         <Route path="connect" element={<Connect />} />
                         <Route path="upload" element={<Upload />} />
                     </Route>
+                ) : null}
             </Routes>
             
             <ConditionalFooter />
