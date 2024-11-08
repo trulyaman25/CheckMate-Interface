@@ -1,14 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import { NavLink } from 'react-router-dom';
-import Lottie from "lottie-react";
 import axios from 'axios';
 
-import AlertIcon from '../../../../assets/icons/alert.png';
 import WarningIcon from '../../../../assets/icons/warningIcon.png';
 import VerifiedDocumentIcon from '../../../../assets/icons/verifiedDocument.png';
-import UploadIcon from '../../../../assets/animations/upload.json';
-import LeafIllustration from '../../../../assets/images/illustration/LeafIllustration.png'
 
 
 function Analysis() {
