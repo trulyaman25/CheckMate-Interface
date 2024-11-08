@@ -1,9 +1,11 @@
 import { useTypewriter } from 'react-simple-typewriter';
 import { NavLink } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
+import Lottie from "lottie-react";
 
 import './homeStyles.css';
 import '../../globalStyles.css'
+import LandingIllustration from '../../assets/animations/landingDocument.json';
 
 function Home() {
     const { loginWithRedirect, logout, isAuthenticated } = useAuth0();
@@ -49,6 +51,8 @@ function Home() {
                             <NavLink className="styled-button w-[150px] mt-[80px]" onClick={() => loginWithRedirect()}> Get Started </NavLink>
                         )}
                     </div>
+
+                    <Lottie animationData={LandingIllustration} loop={true} className="transform scale-125"/>
                 </div>
             </div>
         </>
