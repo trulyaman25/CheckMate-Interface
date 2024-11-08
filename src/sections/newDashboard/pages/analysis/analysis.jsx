@@ -1,23 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { useAuth0 } from '@auth0/auth0-react';
 import { NavLink } from 'react-router-dom';
-import Lottie from "lottie-react";
-import axios from 'axios';
-
-import AlertIcon from '../../../../assets/icons/alert.png';
 import WarningIcon from '../../../../assets/icons/WarningIcon.png';
 import VerifiedDocumentIcon from '../../../../assets/icons/VerifiedDocument.png';
-import UploadIcon from '../../../../assets/animations/upload.json';
-import LeafIllustration from '../../../../assets/images/illustration/LeafIllustration.png'
 
 
 function Analysis() {
-    const { user } = useAuth0();
-    const [showActions, setShowActions] = useState(Array(4).fill(false));
     const [documents, setDocuments] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    const [docTypes, setDocTypes] = useState([]); 
 
     const verifiedCount = documents.filter(doc => doc.verify_flag).length;
     const unverifiedCount = documents.length - verifiedCount;
