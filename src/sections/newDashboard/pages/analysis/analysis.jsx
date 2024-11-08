@@ -5,8 +5,8 @@ import Lottie from "lottie-react";
 import axios from 'axios';
 
 import AlertIcon from '../../../../assets/icons/alert.png';
-import WarningIcon from '../../../../assets/icons/WarningIcon.png';
-import VerifiedDocumentIcon from '../../../../assets/icons/VerifiedDocument.png';
+import WarningIcon from '../../../../assets/icons/warningIcon.png';
+import VerifiedDocumentIcon from '../../../../assets/icons/verifiedDocument.png';
 import UploadIcon from '../../../../assets/animations/upload.json';
 import LeafIllustration from '../../../../assets/images/illustration/LeafIllustration.png'
 
