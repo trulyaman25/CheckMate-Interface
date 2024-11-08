@@ -1,11 +1,23 @@
 import React, { useState, useEffect } from 'react';
+import { useAuth0 } from '@auth0/auth0-react';
 import { NavLink } from 'react-router-dom';
+import Lottie from "lottie-react";
+import axios from 'axios';
+
+import AlertIcon from '../../../../assets/icons/alert.png';
+import WarningIcon from '../../../../assets/icons/WarningIcon.png';
+import VerifiedDocumentIcon from '../../../../assets/icons/VerifiedDocument.png';
+import UploadIcon from '../../../../assets/animations/upload.json';
+import LeafIllustration from '../../../../assets/images/illustration/LeafIllustration.png'
 
 
 function Analysis() {
+    const { user } = useAuth0();
+    const [showActions, setShowActions] = useState(Array(4).fill(false));
     const [documents, setDocuments] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [docTypes, setDocTypes] = useState([]); 
 
     const verifiedCount = documents.filter(doc => doc.verify_flag).length;
     const unverifiedCount = documents.length - verifiedCount;
@@ -16,6 +28,30 @@ function Analysis() {
         month: 'long',
         day: 'numeric',
     });
+
+    useEffect(() => {
+        const fetchDocuments = async () => {
+            if (!user?.sub) {
+                setError('User ID is not available.');
+                setLoading(false);
+                return;
+            }
+
+            try {
+                const response = await axios.get(`http://127.0.0.1:5000/c/${user.sub}`);
+                console.log("Response Data:", response.data);
+                setDocuments(response.data);
+            } catch (err) {
+                console.error("Error fetching documents:", err);
+                setError('Failed to fetch documents: ' + err.message);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchDocuments();
+    }, [user.sub]);
+    
 
     return (
         <>
@@ -53,6 +89,11 @@ function Analysis() {
                                         {documents.map((document, index) => (
                                             <li key={index} className="grid grid-cols-4 items-center p-6 pr-10 border-b-2 hover:border-1 hover:border-indigo-200 hover:bg-indigo-50 transition-all duration-200 gap-4 hover:cursor-pointer">
                                                 <div className="flex items-center justify-start">
+                                                    <span className="text-3xl mr-2">
+                                                        {document.verify_flag ? 
+                                                            <img src={VerifiedDocumentIcon} className="w-[40px] h-[40px]" alt="Verified Icon" /> : 
+                                                            <img src={WarningIcon} className="w-[35px] h-[35px]" alt="Warning Icon" />}
+                                                    </span>
                                                     <p className="font-semibold text-slate-800 ml-3">{document.doctype || 'Unknown Document Type'}</p>
                                                 </div>
 
