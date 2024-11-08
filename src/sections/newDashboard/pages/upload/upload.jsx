@@ -206,68 +206,6 @@ function Upload() {
                 <div className="flex flex-row bg-white text-gray-900 rounded-[40px] h-full border-gray-400 shadow-lg">
                     <div className="w-2/3 bg-gray-50 p-20 shadow-inner rounded-l-[40px]">
                         <h1 className="font-albulaHeavy text-3xl text-slate-800 mb-6">Upload Documents</h1>
-                        
-                        <p className="text-sm text-gray-600 mb-4 mt-16">
-                            The document upload process in Check Mate is designed to be <span className="text-violet-600 font-semibold">secure</span>, 
-                            <span className="text-violet-600 font-semibold">efficient</span>, and <span className="text-violet-600 font-semibold">user-friendly</span>. 
-                            Here’s a breakdown of each step:
-                        </p>
-
-                        <div className="text-sm text-gray-700 mb-6 space-y-4">
-                            <div className="flex items-start">
-                                <span className="bg-violet-100 text-violet-600 p-2 rounded-full font-bold mr-3">1</span>
-                                <p>
-                                    <strong className="text-violet-600">User Uploads the Document:</strong> The user selects a file to upload 
-                                    and specifies its type, like <span className="text-violet-600 font-semibold">Aadhaar card</span>, 
-                                    <span className="text-violet-600 font-semibold">PAN card</span>, or <span className="text-violet-600 font-semibold">admit card</span>. 
-                                    This helps ensure accurate <span className="text-violet-600 font-semibold">categorization</span> for later processing.
-                                </p>
-                            </div>
-
-                            <div className="flex items-start">
-                                <span className="bg-violet-100 text-violet-600 p-2 rounded-full font-bold mr-3">2</span>
-                                <p>
-                                    <strong className="text-violet-600">File Preprocessing and Initial Validation:</strong> Check Mate checks the 
-                                    <span className="text-violet-600 font-semibold">file format</span> and <span className="text-violet-600 font-semibold">size</span> 
-                                    to ensure compatibility. This step reduces errors and ensures the document meets platform requirements.
-                                </p>
-                            </div>
-
-                            <div className="flex items-start">
-                                <span className="bg-violet-100 text-violet-600 p-2 rounded-full font-bold mr-3">3</span>
-                                <p>
-                                    <strong className="text-violet-600">Secure Transfer to IPFS via Pinata:</strong> The file is uploaded to 
-                                    <span className="text-violet-600 font-semibold">IPFS</span> through <span className="text-violet-600 font-semibold">Pinata</span> 
-                                    for <span className="text-violet-600 font-semibold">decentralized</span> and <span className="text-violet-600 font-semibold">tamper-proof storage</span>. 
-                                    Pinata generates a unique <span className="text-violet-600 font-semibold">IPFS hash</span>, which serves as the file's 
-                                    digital fingerprint.
-                                </p>
-                            </div>
-
-                            <div className="flex items-start">
-                                <span className="bg-violet-100 text-violet-600 p-2 rounded-full font-bold mr-3">4</span>
-                                <p>
-                                    <strong className="text-violet-600">Storing Metadata in Check Mate’s Database:</strong> Check Mate saves the 
-                                    <span className="text-violet-600 font-semibold">IPFS hash</span>, document type, and upload date. This enables 
-                                    easy retrieval and efficient document management.
-                                </p>
-                            </div>
-
-                            <div className="flex items-start">
-                                <span className="bg-violet-100 text-violet-600 p-2 rounded-full font-bold mr-3">5</span>
-                                <p>
-                                    <strong className="text-violet-600">Displaying Uploaded Documents:</strong> Uploaded documents appear in the user’s 
-                                    dashboard with details like the document type, upload date, verification status, and a link to view the file on 
-                                    <span className="text-violet-600 font-semibold">IPFS</span>.
-                                </p>
-                            </div>
-                        </div>
-
-                        <p className="text-sm text-gray-700">
-                            This process ensures that each document uploaded to Check Mate is stored in a <span className="text-violet-600 font-semibold">secure</span>, 
-                            <span className="text-violet-600 font-semibold">decentralized</span> manner and is easily accessible, upholding high standards 
-                            for <span className="text-violet-600 font-semibold">data security</span> and <span className="text-violet-600 font-semibold">user experience</span>.
-                        </p>
                     </div>
 
                     <div className="flex flex-col items-center justify-between w-2/3 bg-gradient-to-b from-violet-200 to-violet-300 rounded-r-[40px] py-36 shadow-inner">
