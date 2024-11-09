@@ -1,6 +1,5 @@
 
 # Check Mate
-Deployed link ---> https://checkstudio.vercel.app/
 
 ## Table of Contents
 - [Project Overview](#project-overview)
@@ -106,3 +105,11 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **Ansh Shrivastav** - [GitHub](https://github.com/ansh-d23)
 - **Sparsh Jaggi** - [GitHub](https://github.com/sparshjaggi07)
 - **Aayush Gupta** - [GitHub](https://github.com/aayush2761)
+
+## Images
+  ![image](./src/assets/readme/1.png)
+  ![image](./src/assets/readme/2.png)
+  ![image](./src/assets/readme/3.png)
+  ![image](./src/assets/readme/4.png)
+  ![image](./src/assets/readme/5.png)
+  ![image](./src/assets/readme/6.png)
