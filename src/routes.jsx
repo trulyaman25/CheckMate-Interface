@@ -33,6 +33,7 @@ function WebRoutes() {
     return (
         <Router>
             <ConditionalHeader />
+            
             <Routes>
                 <Route path="/" element={<Home />} />
                 {isAuthenticated ? (

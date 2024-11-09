@@ -202,7 +202,7 @@ function Upload() {
 
     return (
         isAuthenticated && (
-            <main className="fixed w-[calc(100vw-450px)] h-screen bg-[#0F0D13ff] rounded-tl-[40px] rounded-bl-[40px] p-7 font-albulaRegular transition-all duration-300">
+            <main className="fixed w-[calc(100vw-450px)] h-screen bg-[#0F0D13ff] rounded-tl-[40px] rounded-bl-[40px] pt-7 pr-7 pb-7 font-albulaRegular transition-all duration-300">
                 <div className="flex flex-row bg-white text-gray-900 rounded-[40px] h-full border-gray-400 shadow-lg">
                     <div className="w-2/3 bg-gray-50 p-20 shadow-inner rounded-l-[40px]">
                         <h1 className="font-albulaHeavy text-3xl text-slate-800 mb-6">Upload Documents</h1>
