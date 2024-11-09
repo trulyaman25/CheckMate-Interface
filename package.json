@@ -6,7 +6,7 @@
 	"scripts": {
 		"frontend": "vite",
 		"backend": "cd engine && python app.py",
-		"dev": "vite",
+		"dev": "concurrently \"vite\" \"cd engine && python app.py\"",
 		"build": "vite build",
 		"lint": "eslint .",
 		"preview": "vite preview"
