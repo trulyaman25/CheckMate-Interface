@@ -6,7 +6,9 @@
 	"scripts": {
 		"frontend": "vite",
 		"backend": "cd engine && python app.py",
-		"dev": "concurrently \"vite\" \"cd engine && python app.py\"",
+		"connect": "cd src/sections/newDashboard/pages/connect && BROWSER=none npm start",
+		"sockets": "cd sockets && npm start",
+		"dev": "concurrently \"npm run frontend\" \"npm run backend\" \"npm run connect\" \"npm run sockets\"",
 		"build": "vite build",
 		"lint": "eslint .",
 		"preview": "vite preview"

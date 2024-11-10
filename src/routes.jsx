@@ -6,7 +6,6 @@ import DashboardLayout from './sections/newDashboard/dashboardLayout';
 import Wallet from './sections/newDashboard/pages/wallet/wallet';
 import Profile from './sections/newDashboard/pages/profile/profile';
 import Analysis from './sections/newDashboard/pages/analysis/analysis';
-import Connect from './sections/newDashboard/pages/connect/connect';
 import Upload from './sections/newDashboard/pages/upload/upload';
 import Header from './components/navigation/header/header';
 import Footer from './components/navigation/footer/footer';
@@ -41,7 +40,6 @@ function WebRoutes() {
                         <Route path="wallet" element={<Wallet />} />
                         <Route path="profile" element={<Profile />} />
                         <Route path="analysis" element={<Analysis />} />
-                        <Route path="connect" element={<Connect />} />
                         <Route path="upload" element={<Upload />} />
                     </Route>
                 ) : null}
