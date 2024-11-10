@@ -5,7 +5,7 @@ import { ToastContainer, toast } from "react-toastify";
 import axios from "axios";
 import styled from "styled-components";
 import "react-toastify/dist/ReactToastify.css";
-import Logo from "../assets/connectifyLogo_Background.png";
+import Logo from "../assets/checkMateRounded.png";
 
 export default function Login() {
 	const navigate = useNavigate();
@@ -70,7 +70,7 @@ export default function Login() {
 				<form action="" onSubmit={(event) => handleSubmit(event)}>
 					<div className="brand">
 						<img src={Logo} alt="Connectify Logo" className="logo" />
-						<h1>login</h1>
+						<h1>login to <br /> Check Mate Connect</h1>
 					</div>
 
 					<input type="text" placeholder="Username" name="username" onChange={(e) => handleChange(e)} min="3" />

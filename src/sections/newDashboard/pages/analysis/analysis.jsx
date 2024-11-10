@@ -168,9 +168,11 @@ function Analysis() {
                             </div>
 
                             <div>
-                                <div className='w-[300px] h-fit rounded-3xl p-8 flex flex-col justify-center items-center border-dashed border-2 border-[#8360ff]'>
-                                    <button className='w-full h-[70px] bg-[#13130d] rounded-2xl font-albulaBold uppercase text-white hover:bg-orange-400 transition-all duration-300 hover:drop-shadow-xl'>Connect With Proffessors</button>
-                                </div>
+                                <a href="http://localhost:3000/login">
+                                    <div className='w-[300px] h-fit rounded-3xl p-8 flex flex-col justify-center items-center border-dashed border-2 border-[#8360ff]'>
+                                        <button className='w-full h-[70px] bg-[#13130d] rounded-2xl font-albulaBold uppercase text-white hover:bg-orange-400 transition-all duration-300 hover:drop-shadow-xl'>Connect With Proffessors</button>
+                                    </div>
+                                </a>
 
                                 <div className='w-[300px] h-fit rounded-3xl p-8 flex flex-col justify-center items-center border-dashed border-2 border-[#8360ff] mt-5'>
                                     <NavLink to="/dashboard/upload" className='w-full h-[70px] rounded-2xl font-albulaBold uppercase text-white bg-[#8360ff] hover:bg-purple-700 transition-all duration-300 hover:drop-shadow-xl flex justify-center items-center'>
