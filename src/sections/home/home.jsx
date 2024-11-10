@@ -95,7 +95,7 @@ function Home() {
                             <div className="font-albulaExtraLight text-xs md:text-sm lg:text-[10px] xl:text-[12px] 2xl:text-[15px] lg:mt-[20px] xl:mt-[40px] uppercase tracking-[2px] lg:tracking-[2px]">
                                 Streamlining Document Verification Process with Unmatched Efficiency
                             </div>
-                            
+                            6
                             <p className="mt-[15px] md:mt-[20px] lg:mt-[25px] lg:text-4xl xl:text-5xl 2xl:text-7xl tracking-[2px] md:tracking-[3px]">
                                 Empowering You to Verify Your Documents with <span className="text-[#6536ff]">{typeEffect}</span>|
                             </p>
@@ -104,11 +104,11 @@ function Home() {
                         <div className='mt-[40px] xl:mt-[60px] 2xl:mt-[80px]'>
                             {isAuthenticated ? (
                                 <div className="flex flex-row justify-center items-center gap-x-4">
-                                    <NavLink to="/dashboard/analysis" className="styled-button w-[250px]">Jump To Dashboard</NavLink>
+                                    <NavLink to="/dashboard/analysis" className="styled-button w-[236px]">Jump To Dashboard</NavLink>
                                     <NavLink className="logoutButton h-[30px] w-[100px] ml-[50px]" onClick={() => logout({ returnTo: window.location.origin })}>Log Out</NavLink>
                                 </div>
                             ) : (
-                                <NavLink className="styled-button w-[150px] mt-[80px]" onClick={() => loginWithRedirect()}> Get Started </NavLink>
+                                <NavLink className="styled-button w-[150px] mt-[70px]" onClick={() => loginWithRedirect()}> Get Started </NavLink>
                             )}
                         </div>
                     </div>
