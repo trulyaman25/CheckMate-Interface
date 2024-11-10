@@ -103,7 +103,7 @@ function Home() {
 
                         <div className='mt-[40px] xl:mt-[60px] 2xl:mt-[80px]'>
                             {isAuthenticated ? (
-                                <div className="flex flex-row justify-center items-center gap-4 mt-[80px]">
+                                <div className="flex flex-row justify-center items-center gap-x-4">
                                     <NavLink to="/dashboard/analysis" className="styled-button w-[250px]">Jump To Dashboard</NavLink>
                                     <NavLink className="logoutButton h-[30px] w-[100px] ml-[50px]" onClick={() => logout({ returnTo: window.location.origin })}>Log Out</NavLink>
                                 </div>
