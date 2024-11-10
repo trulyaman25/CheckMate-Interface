@@ -57,29 +57,14 @@ Follow these steps to set up the project on your local machine:
    npm install
    ```
 
-3. **Create a `.env` file:** Add the following configuration:
-   ```plaintext
-   // For MongoDB and Backend
-   SERVER_PORT=5000
-   MONGO_URI=mongodb+srv://<username>:<password>@cluster0.vygshnz.mongodb.net/checkMate
-
-   // For Auth0 Authentication
-   VITE_AUTH0_DOMAIN=<your_auth0_domain>
-   VITE_AUTH0_CLIENT_ID=<your_auth0_client_id>
-
-   // For IPFS Storage
-   VITE_PINATA_API_KEY=<your_pinata_api_key>
-   VITE_PINATA_SECRET_KEY=<your_pinata_secret_key>
-   ```
-
-4. **Set up the backend:**
+3. **Set up the backend:**
    ```bash
    cd engine
    python -m venv .venv
    pip install -r requirements.txt
    ```
 
-5. **Relocate to root directory:**
+4. **Relocate to root directory:**
    ```
    cd ..
    ```
