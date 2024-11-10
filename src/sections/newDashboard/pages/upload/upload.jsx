@@ -62,8 +62,8 @@ function Upload() {
         
             const url = 'https://api.pinata.cloud/pinning/pinFileToIPFS';
             const headers = {
-                pinata_api_key: PINATA_API_KEY,
-                pinata_secret_api_key: PINATA_SECRET_API_KEY,
+                pinata_api_key: '04b26ee360171f03ae2b',
+                pinata_secret_api_key: '250fe3ce90862d18f94ced6c065a6bec5a956d528aef8ab9d737a9b3f0ca8065',
                 "Content-Type": "multipart/form-data",
             };
 
