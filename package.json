@@ -4,7 +4,7 @@
 	"version": "0.0.0",
 	"type": "module",
 	"scripts": {
-		"frontend": "vite",
+		"frontend": "vite --open",
 		"backend": "cd engine && python app.py",
 		"connect": "cd src/sections/newDashboard/pages/connect && BROWSER=none npm start",
 		"sockets": "cd sockets && npm start",
