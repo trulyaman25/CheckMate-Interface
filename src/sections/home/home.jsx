@@ -95,7 +95,7 @@ function Home() {
                             <div className="font-albulaExtraLight text-xs md:text-sm lg:text-[10px] xl:text-[12px] 2xl:text-[15px] lg:mt-[20px] xl:mt-[40px] uppercase tracking-[2px] lg:tracking-[2px]">
                                 Streamlining Document Verification Process with Unmatched Efficiency
                             </div>
-                            6
+                            
                             <p className="mt-[15px] md:mt-[20px] lg:mt-[25px] lg:text-4xl xl:text-5xl 2xl:text-7xl tracking-[2px] md:tracking-[3px]">
                                 Empowering You to Verify Your Documents with <span className="text-[#6536ff]">{typeEffect}</span>|
                             </p>
