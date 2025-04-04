@@ -1,0 +1,66 @@
+[
+    {
+        "name": "Sparsh Jaggi",
+        "role": "AI/ML Developer",
+        "description": "AI/ML developer, implementing advanced AI models for document analysis and verification. Sparsh's contributions in computer vision enable precise document checks, automating verification steps.",
+        "img": "/src/assets/images/teamMembers/sparshImg.jpeg",
+        "socialLinks": [
+            {
+                "url": "https://www.instagram.com/sparshjaggi/",
+                "icon": "instagram"
+            },
+            {
+                "url": "https://www.linkedin.com/in/sparsh-jaggi-1aa263257/",
+                "icon": "linkedIn"
+            }
+        ]
+    },
+    {
+        "name": "Aayush Gupta",
+        "role": "Full Stack Developer",
+        "description": "Full Stack developer, managing core workflows and essential user features. Aayush's contributions ensure that checkMate operates smoothly, providing a cohesive and efficient experience for document management.",
+        "img": "/src/assets/images/teamMembers/aayushImg.jpg",
+        "socialLinks": [
+            {
+                "url": "https://www.instagram.com/_.aayush.gupta._/",
+                "icon": "instagram"
+            },
+            {
+                "url": "https://www.linkedin.com/in/aayush-gupta-020284263/",
+                "icon": "linkedIn"
+            }
+        ]
+    },
+    {
+        "name": "Aman Kumar",
+        "role": "Blockchain/Full Stack Developer",
+        "description": "Blockchain and Full Stack developer, focused on secure, decentralized document storage for checkMate. Aman also leads UI design, creating an intuitive interface that enhances user experience",
+        "img": "/src/assets/images/teamMembers/amanImg.jpg",
+        "socialLinks": [
+            {
+                "url": "https://www.instagram.com/amanwhoooo/",
+                "icon": "instagram"
+            },
+            {
+                "url": "https://www.linkedin.com/in/amankumar25/",
+                "icon": "linkedIn"
+            }
+        ]
+    },
+    {
+        "name": "Anshdeep Shrivastav",
+        "role": "ML/Full Stack Developer",
+        "description": "ML/Backend developer, managing backend integration and processing pipelines. Ansh's machine learning expertise optimizes document data flow and enables accurate, reliable backend operations.",
+        "img": "/src/assets/images/teamMembers/anshImg.jpg",
+        "socialLinks": [
+            {
+                "url": "https://www.instagram.com/ansh_d23/",
+                "icon": "instagram"
+            },
+            {
+                "url": "https://www.linkedin.com/in/anshdeep-shrivastav-5a9a6b244/",
+                "icon": "linkedIn"
+            }
+        ]
+    }
+]

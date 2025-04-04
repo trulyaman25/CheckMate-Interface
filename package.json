@@ -6,9 +6,8 @@
 	"scripts": {
 		"frontend": "vite --open",
 		"backend": "cd engine && python app.py",
-		"connect": "cd src/sections/newDashboard/pages/connect && cross-env BROWSER=none npm start",
 		"sockets": "cd sockets && npm start",
-		"dev": "concurrently \"npm run frontend\" \"npm run backend\" \"npm run connect\" \"npm run sockets\"",
+		"dev": "npm run frontend",
 		"build": "vite build",
 		"lint": "eslint .",
 		"preview": "vite preview"

@@ -42,7 +42,8 @@ function Header() {
 				<span className="font-noirProBold text-5xl">CHECK </span>
 				<span className="font-noirProRegular text-5xl tracking-widest italic" style={{ color: '#6536ff' }}>MATE</span>
 			</div>
-			<div className="w-[500px] h-full flex flex-row justify-between items-center">
+
+			<div className="w-[700px] h-full flex flex-row justify-between items-center">
 
 				<NavLink to="#home"
 					className={`px-4 py-2 transition-all duration-300 w-[100px] flex flex-row justify-center items-center font-albulaRegular rounded-xl ${textColor} border-2 border-[#6536ff] border-transparent hover:border-[#6536ff]`}
@@ -65,9 +66,14 @@ function Header() {
 					Team
 				</NavLink>
 
-				<NavLink onClick={() => loginWithRedirect()}
-					className={`px-4 py-2 transition-all border-2 border-gray-200 duration-100 rounded-xl bg-[#6536ff] hover:bg-[#472d99] w-[100px] flex flex-row justify-center items-center font-albulaLight text-white`}>
-					Login
+				<NavLink to="/studentLogin"
+					className={`px-4 py-2 transition-all border-2 border-gray-200 duration-100 rounded-xl bg-[#6536ff] hover:bg-[#472d99] flex flex-row justify-center items-center font-albulaLight text-white`}>
+					Student Login
+				</NavLink>
+
+				<NavLink to="/companyLogin"
+					className={`px-4 py-2 transition-all border-2 border-gray-200 duration-100 rounded-xl bg-[#6536ff] hover:bg-[#472d99] flex flex-row justify-center items-center font-albulaLight text-white`}>
+					Company Login
 				</NavLink>
 			</div>
 		</header>

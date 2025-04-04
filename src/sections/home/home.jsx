@@ -10,13 +10,10 @@ import DownArrow from '../../assets/animations/downArrow.json';
 import AboutImgOne from '../../assets/images/illustration/AboutImgOne.png'
 import AboutImgTwo from '../../assets/images/illustration/AboutImgTwo.png'
 
-import AmanImage from '../../assets/images/teamMembers/amanImg.jpg'
-import SparshImage from '../../assets/images/teamMembers/sparshImg.jpeg'
-import AnshImage from '../../assets/images/teamMembers/anshImg.jpg'
-import AayushImage from '../../assets/images/teamMembers/aayushImg.jpg'
-
 import linkedInIcon from '../../assets/icons/linkedinLogoSVG.svg'
 import instagramIcon from '../../assets/icons/instagramLogoSVG.svg'
+
+import teamMembers from '../../data/teamMembers.json'
 
 function Home() {
     const { loginWithRedirect, logout, isAuthenticated } = useAuth0();
@@ -27,49 +24,6 @@ function Home() {
         typeSpeed: 30,
         deleteSpeed: 10,
     });
-
-    const teamMembers = [
-        { 
-            name: 'Sparsh Jaggi', 
-            role: 'AI/ML Developer', 
-            description: "AI/ML developer, implementing advanced AI models for document analysis and verification. Sparsh's contributions in computer vision enable precise document checks, automating verification steps.",
-            img: SparshImage,
-            socialLinks: [
-                { url: 'https://www.instagram.com/sparshjaggi/', icon: 'instagram' },
-                { url: 'https://www.linkedin.com/in/sparsh-jaggi-1aa263257/', icon: 'linkedIn' },
-            ],
-        },
-        { 
-            name: 'Aayush Gupta', 
-            role: 'Full Stack Developer', 
-            description: "Full Stack developer, managing core workflows and essential user features. Aayush's contributions ensure that checkMate operates smoothly, providing a cohesive and efficient experience for document management.",
-            img: AayushImage,
-            socialLinks: [
-                { url: 'https://www.instagram.com/_.aayush.gupta._/', icon: 'instagram' },
-                { url: 'https://www.linkedin.com/in/aayush-gupta-020284263/', icon: 'linkedIn' },
-            ],
-        },
-        { 
-            name: 'Aman Kumar', 
-            role: 'Blockchain/Full Stack Developer', 
-            description: 'Blockchain and Full Stack developer, focused on secure, decentralized document storage for checkMate. Aman also leads UI design, creating an intuitive interface that enhances user experience',
-            img: AmanImage ,
-            socialLinks: [
-                { url: 'https://www.instagram.com/amanwhoooo/', icon: 'instagram' },
-                { url: 'https://www.linkedin.com/in/amankumar25/', icon: 'linkedIn' },
-            ],
-        },
-        { 
-            name: 'Anshdeep Shrivastav', 
-            role: 'ML/Full Stack Developer', 
-            description: "ML/Backend developer, managing backend integration and processing pipelines. Ansh's machine learning expertise optimizes document data flow and enables accurate, reliable backend operations.",
-            img: AnshImage,
-            socialLinks: [
-                { url: 'https://www.instagram.com/ansh_d23/', icon: 'instagram' },
-                { url: 'https://www.linkedin.com/in/anshdeep-shrivastav-5a9a6b244/', icon: 'linkedIn' },
-            ],
-        },
-    ];
     
     return (
         <>
@@ -116,7 +70,6 @@ function Home() {
                     <Lottie animationData={LandingIllustration} loop={true} className="transform scale-150 w-fit h-fit"/>
                 </div>
 
-                {/* About Section */}
                 <section id="about" className="w-full h-screen flex flex-row justify-between items-center px-24 xl:px-56">
                     <div className="w-[700px] h-full flex flex-col justify-center">
                         <h1 className="text-lg xl:text-xl 2xl:text-xl font-albulaExtraLight tracking-widest">About checkMate</h1>
@@ -136,7 +89,6 @@ function Home() {
                     </div>
                 </section>
 
-                {/* Team Section */}
                 <section id="team" className="w-full h-auto flex flex-col justify-center items-center px-24 lg:py-64 2xl:py-96">
                     <h1 className="font-albulaLight tracking-widest uppercase text-gray-500 text-sm">
                         Website Developed by <span className="text-[#6536ff] font-albulaBold">Team Binary Bots</span> for CodeUtsava 8.0, Crafted with Love ❤️
