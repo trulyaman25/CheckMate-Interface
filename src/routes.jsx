@@ -9,7 +9,10 @@ import Upload from './sections/userDashboard/pages/upload/upload';
 import Header from './components/navigation/header/header';
 import Footer from './components/navigation/footer/footer';
 import StudentSignIn from './sections/auth/studentAuth/studentSignIn';
+import StudentSignUp from './sections/auth/studentAuth/studentSignUp';
+
 import CompanySignIn from './sections/auth/companyAuth/companySignIn';
+import CompanySignUp from './sections/auth/companyAuth/companySignUp';
 
 import UserDashboardLayout from './sections/userDashboard/userdashboardLayout';
 
@@ -38,13 +41,17 @@ function WebRoutes() {
             
             <Routes>
                 <Route path="/" element={<Home />} />
+
                 <Route path="studentLogin" element={<StudentSignIn/>}/>
+                <Route path="studentRegistration" element={<StudentSignUp/>}/>
                 <Route path="companyLogin" element={<CompanySignIn/>}/>
+                <Route path="companyRegister" element={<CompanySignIn/>}/>
+
                 <Route path="/student" element={<UserDashboardLayout />}>
-                    <Route path="wallet" element={<Wallet />} />
-                    <Route path="profile" element={<Profile />} />
-                    <Route path="dashboard" element={<Analysis />} />
-                    <Route path="upload" element={<Upload />} />
+                    <Route path="wallet/:studentId" element={<Wallet />} />
+                    <Route path="profile/:studentId" element={<Profile />} />
+                    <Route path="dashboard/:studentId" element={<Analysis />} />
+                    <Route path="upload/:studentId" element={<Upload />} />
                 </Route>
             </Routes>
             

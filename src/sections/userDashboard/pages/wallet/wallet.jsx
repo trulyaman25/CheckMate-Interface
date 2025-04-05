@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
 import axios from 'axios';
 import { useAuth0 } from "@auth0/auth0-react";
+import { useNavigate, useParams } from "react-router-dom";
 
 function Wallet() {
     const { user } = useAuth0();
+    const navigate = useNavigate();
+    const { studentId } = useParams();
 
     const [documents, setDocuments] = useState([]);
     const [error, setError] = useState(null);
@@ -11,15 +14,24 @@ function Wallet() {
     const [selectedDocument, setSelectedDocument] = useState(null);
 
     useEffect(() => {
+        // Check if user is authenticated and has student data
+        const studentData = localStorage.getItem('studentData');
+        const isAuthenticated = localStorage.getItem('isAuthenticated');
+        
+        if (!studentData || !isAuthenticated) {
+            navigate('/studentLogin');
+            return;
+        }
+
         const fetchDocuments = async () => {
-            if (!user?.sub) {
-                setError('User ID is not available.');
+            if (!studentId) {
+                setError('Student ID is not available.');
                 setLoading(false);
                 return;
             }
 
             try {
-                const response = await axios.get(`http://127.0.0.1:5000/c/${user.sub}`);
+                const response = await axios.get(`http://127.0.0.1:5000/c/${studentId}`);
                 console.log("Response Data:", response.data);
                 setDocuments(response.data);
             } catch (err) {
@@ -31,7 +43,7 @@ function Wallet() {
         };
 
         fetchDocuments();
-    }, [user.sub]);
+    }, [studentId, navigate]);
 
     const handleDocumentClick = (document) => {
         setSelectedDocument(document);

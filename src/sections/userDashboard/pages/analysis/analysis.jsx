@@ -1,18 +1,30 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 import WarningIcon from '../../../../assets/icons/warningIcon.png';
 import VerifiedDocumentIcon from '../../../../assets/icons/verifiedDocument.png';
 
 function Analysis() {
+    const navigate = useNavigate();
     const { user } = useAuth0();
     const [showActions, setShowActions] = useState(Array(4).fill(false));
     const [documents, setDocuments] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [docTypes, setDocTypes] = useState([]); 
+    const { studentId } = useParams();
+
+    // Check authentication
+    useEffect(() => {
+        const studentData = localStorage.getItem('studentData');
+        const isAuthenticated = localStorage.getItem('isAuthenticated');
+        
+        if (!studentData || !isAuthenticated) {
+            navigate('/studentLogin');
+        }
+    }, [navigate]);
 
     const verifiedCount = documents.filter(doc => doc.verify_flag).length;
     const unverifiedCount = documents.length - verifiedCount;
@@ -26,14 +38,14 @@ function Analysis() {
 
     useEffect(() => {
         const fetchDocuments = async () => {
-            if (!user?.sub) {
-                setError('User ID is not available.');
+            if (!studentId) {
+                setError('Student ID is not available');
                 setLoading(false);
                 return;
             }
 
             try {
-                const response = await axios.get(`http://127.0.0.1:5000/c/${user.sub}`);
+                const response = await axios.get(`http://127.0.0.1:5000/c/${studentId}`);
                 console.log("Response Data:", response.data);
                 setDocuments(response.data);
             } catch (err) {
@@ -45,7 +57,7 @@ function Analysis() {
         };
 
         fetchDocuments();
-    }, [user.sub]);
+    }, [studentId]);
 
     return (
         <>
@@ -174,7 +186,7 @@ function Analysis() {
                                 </a>
 
                                 <div className='w-[300px] h-fit rounded-3xl p-8 flex flex-col justify-center items-center border-dashed border-2 border-[#8360ff] mt-5'>
-                                    <NavLink to="/dashboard/upload" className='w-full h-[70px] rounded-2xl font-albulaBold uppercase text-white bg-[#8360ff] hover:bg-purple-700 transition-all duration-300 hover:drop-shadow-xl flex justify-center items-center'>
+                                    <NavLink to={`/student/upload/${studentId}`} className='w-full h-[70px] rounded-2xl font-albulaBold uppercase text-white bg-[#8360ff] hover:bg-purple-700 transition-all duration-300 hover:drop-shadow-xl flex justify-center items-center'>
                                             Upload Documents
                                     </NavLink>
                                 </div>

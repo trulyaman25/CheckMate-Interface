@@ -19,13 +19,20 @@ import json
 import os
 from dotenv import load_dotenv
 
-# Initialize the Flask app and enable CORS
+# Initialize the Flask app and configure CORS
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={
+    r"/*": {
+        "origins": ["http://localhost:5173", "http://127.0.0.1:5173"],
+        "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+        "allow_headers": ["Content-Type", "Authorization"],
+        "expose_headers": ["Content-Type", "Authorization"],
+        "supports_credentials": True
+    }
+})
 
-
-# MongoDB Configuration
-app.config["MONGO_URI"] = 'mongodb+srv://amanwhoooo:n056XcKw6YMWQIyo@cluster0.vygshnz.mongodb.net/checkMate'
+# MongoDB Configuration - Direct URI
+app.config["MONGO_URI"] = "mongodb+srv://amanwhoooo:n056XcKw6YMWQIyo@cluster0.vygshnz.mongodb.net/trustify"
 mongo = PyMongo(app)
 
 # Load sample database from JSON file
@@ -278,6 +285,66 @@ def overlay_signature_endpoint():
    
    except Exception as e:
        return jsonify({"status":"error","message":str(e)})
+
+# Add OPTIONS handler for preflight requests
+@app.route('/register-student', methods=['OPTIONS'])
+def handle_preflight():
+    response = jsonify({'message': 'OK'})
+    response.headers.add('Access-Control-Allow-Origin', 'http://localhost:5173')
+    response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
+    response.headers.add('Access-Control-Allow-Methods', 'POST,OPTIONS')
+    return response, 200
+
+@app.route('/register-student', methods=['POST'])
+def register_student():
+    try:
+        data = request.json
+        # Add registration timestamp
+        data['registrationDate'] = datetime.utcnow()
+        
+        # Insert the student data into MongoDB
+        result = mongo.db.students.insert_one(data)
+        
+        response = jsonify({
+            "message": "Student registered successfully",
+            "studentId": str(result.inserted_id)
+        })
+        return response, 201
+        
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+@app.route('/login-student', methods=['POST'])
+def login_student():
+    try:
+        data = request.json
+        if not data or 'email' not in data or 'password' not in data:
+            return jsonify({"error": "Email and password are required"}), 400
+        
+        # Find the student by email
+        student = mongo.db.students.find_one({"email": data['email']})
+        
+        if not student:
+            return jsonify({"error": "Student not found"}), 404
+            
+        # Check password (in a real app, you should compare hashed passwords)
+        if student['password'] != data['password']:
+            return jsonify({"error": "Invalid password"}), 401
+            
+        # Convert ObjectId to string for JSON serialization
+        student['_id'] = str(student['_id'])
+        
+        return jsonify({
+            "message": "Login successful",
+            "studentId": student['studentId'],
+            "firstName": student['firstName'],
+            "lastName": student['lastName'],
+            "email": student['email']
+        }), 200
+        
+    except Exception as e:
+        print("Login error:", str(e))
+        return jsonify({"error": str(e)}), 500
 
 if __name__ == '__main__':
    app.run(debug=True)
