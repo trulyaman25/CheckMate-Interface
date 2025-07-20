@@ -14,6 +14,9 @@ dist-ssr
 
 .env
 
+# Python virtual environments
+engine/venv/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
@@ -24,6 +27,3 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw*
-
-# Ignore Python virtual environments
-engine/.venv/
