@@ -1,6 +1,5 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
 import Lottie from 'react-lottie';
 import axios from 'axios';
 
@@ -13,15 +12,12 @@ import errorAnimation from '../../../../assets/animations/Error_Animation.json';
 
 function Upload() {
     const { user, isAuthenticated } = useAuth0();
+
     const [file, setFile] = useState(null);
     const [docType, setDocType] = useState('');
     const [loading, setLoading] = useState(false);
-    const [ipfsHash, setIpfsHash] = useState(null);
     const [verifyStatus, setVerifyStatus] = useState(false);
-    
     const [currentStage, setCurrentStage] = useState(0);
-
-    const [newHash, setNewHash] = useState(null);
     const [error, setError] = useState(false);
 
 
@@ -32,10 +28,8 @@ function Upload() {
     const handleRemoveFile = () => {
         setFile(null);
         setDocType('');
-        setIpfsHash(null);
         setVerifyStatus(false);
         setError(false);
-        setNewHash(null);
         setCurrentStage(0);
     };
 
@@ -50,9 +44,6 @@ function Upload() {
             alert('Please select a file and document type.');
         }
     };
-
-    const PINATA_API_KEY = import.meta.env.VITE_PINATA_API_KEY;
-    const PINATA_SECRET_API_KEY = import.meta.env.VITE_PINATA_SECRET_KEY;
 
     const handleStoreDocument = async () => {
         setLoading(true);
@@ -71,8 +62,6 @@ function Upload() {
         
             const response = await axios.post(url, formData, { headers });
             const hash = response.data.IpfsHash;
-            setIpfsHash(hash);
-            
         
             // Prepare data to send to your backend
             const backendData = JSON.stringify({
@@ -139,7 +128,6 @@ function Upload() {
                     // Send additional request using await
                     const additionalResponse = await axios.request(additionalConfig);
                     const verifiedHash = additionalResponse.data;
-                    setNewHash(verifiedHash.ipfs_hash);
 
                     console.log(verifiedHash);
                     setCurrentStage(4);
@@ -210,7 +198,7 @@ function Upload() {
                         <p className="text-sm text-gray-600 mb-4 mt-16">
                             The document upload process in Check Mate is designed to be <span className="text-violet-600 font-semibold">secure</span>, 
                             <span className="text-violet-600 font-semibold">efficient</span>, and <span className="text-violet-600 font-semibold">user-friendly</span>. 
-                            Here’s a breakdown of each step:
+                            Here's a breakdown of each step:
                         </p>
 
                         <div className="text-sm text-gray-700 mb-6 space-y-4">

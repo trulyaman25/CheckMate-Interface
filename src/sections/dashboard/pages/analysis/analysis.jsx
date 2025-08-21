@@ -67,12 +67,12 @@ function Analysis() {
                         ) : error ? (
                             <p className="text-red-500 mt-10">{error}</p>
                         ) : (
-                            <div className="mt-10">
+                            <div className="mt-10 overflow-hidden">
                                 <div>
                                     <h1 className='font-albulaHeavy text-2xl text-slate-700'>Document Logs</h1>
                                 </div>
 
-                                <div className="h-[400px]">
+                                <div className="h-[500px]">
                                     <div className="grid grid-cols-4 gap-4 py-4 border-b border-gray-300 text-slate-500 font-albulaMedium">
                                         <p className="font-albulaMedium">Document Type</p>
                                         <p className="font-albulaMedium text-center mr-8">Status</p>
